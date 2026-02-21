@@ -1,0 +1,207 @@
+/* =========================
+   🌍 GLOBAL
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Gloria Hallelujah", cursive;
+  background: radial-gradient(circle at top, #fff4e8, #e8d3b8);
+  color: #5c4033;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* =========================
+   💕 FLOATING HEARTS
+========================= */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -20px;
+  width: 14px;
+  height: 14px;
+  background: rgba(120, 30, 30, 0.4);
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
+}
+
+/* =========================
+   ✉️ ENVELOPE SCREEN
+========================= */
+#envelopeScreen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #fff7ef, #e6ccb1);
+  z-index: 10;
+  transition: opacity 1.2s ease;
+}
+
+#envelopeScreen.fade-out {
+  opacity: 0;
+}
+
+/* .envelope {
+  width: 500px;
+  height: 340px;
+  position: relative;
+  cursor: pointer;
+  animation: floatEnvelope 4s ease-in-out infinite;
+} */
+
+.envelope {
+  width: clamp(340px, 90vw, 500px);
+  height: calc(clamp(300px, 85vw, 440px) * 0.69);
+  position: relative;
+  cursor: pointer;
+  animation: floatEnvelope 4s ease-in-out infinite;
+}
+
+@keyframes floatEnvelope {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.envelope .front {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#f3e1c7, #e4c9a8);
+  border-radius: 8px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+.envelope .flap {
+  position: absolute;
+  inset: 0;
+  background: #dec3a1;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  transform-origin: top;
+  transition: transform 1s cubic-bezier(.2,.8,.2,1);
+  z-index: 3;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-text {
+  position: absolute;
+  bottom: 22px;
+  width: 100%;
+  font-family: "Great Vibes", cursive;
+  font-size: 2em;
+  color: #5c4033;
+  z-index: 4;
+}
+
+/* =========================
+   📜 LOVE LETTER
+========================= */
+.love-letter {
+  max-width: 800px;
+  margin: 120px auto;
+  background: #fffaf3;
+  padding: 80px 60px;
+  border-radius: 6px;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.25),
+    inset 0 0 0 1px rgba(0,0,0,0.05);
+  animation: letterEnter 1.4s ease forwards;
+  z-index: 5;
+}
+
+@keyframes letterEnter {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  margin-bottom: 60px;
+  font-size: 1.6em;
+  line-height: 1.6;
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .love-letter {
+    padding: 50px 25px;
+    margin: 80px 16px;
+  }
+
+  .message {
+    font-size: 1.3em;
+  }
+}
+
+/* =========================
+   📱 ENVELOPE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+  .envelope {
+    width: 300px;
+    height: 210px;
+  }
+
+  .envelope-text {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .envelope {
+    width: 260px;
+    height: 180px;
+  }
+
+  .envelope-text {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 768px) {
+  .envelope.open {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 480px) {
+  .letter {
+    padding: 1.4rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
