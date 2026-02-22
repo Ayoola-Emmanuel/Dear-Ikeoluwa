@@ -181,7 +181,7 @@ body {
 @media (max-width: 480px) {
   .envelope {
     width: 380px;
-    height: 241.5px;
+    height: 210px;
   }
 
   .envelope-text {
