@@ -4,7 +4,20 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================== */
   const loveSong = document.getElementById("loveSong");
 
+  function fadeInMusic(audio, duration = 3000) {
+    audio.volume = 0;
+    audio.play().catch(() => {});
+    const step = 0.02;
+    const interval = duration / (1 / step);
 
+    const fade = setInterval(() => {
+      if (audio.volume < 0.4) {
+        audio.volume += step;
+      } else {
+        clearInterval(fade);
+      }
+    }, interval);
+  }
 
   const music = document.getElementById("bg-music");
 
