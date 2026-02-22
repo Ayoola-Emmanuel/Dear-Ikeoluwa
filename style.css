@@ -187,7 +187,7 @@ body {
 
  .envelope-text {
     bottom: auto;              /* release bottom anchor */
-    top: 5%;                  /* control vertical position */
+    top: 45%;                  /* control vertical position */
     transform: translateY(-50%);
     font-size: 1.74em;
     padding: 0 16px;
