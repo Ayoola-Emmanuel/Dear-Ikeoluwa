@@ -174,18 +174,18 @@ body {
   }
 
   .envelope-text {
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 }
 
 @media (max-width: 480px) {
   .envelope {
-    width: 320px;
-    height: 221px;
+    width: 330px;
+    height: 227.7px;
   }
 
   .envelope-text {
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 }
 
