@@ -4,19 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================== */
   const loveSong = document.getElementById("loveSong");
 
-  function fadeInMusic(audio, duration = 3000) {
-    audio.volume = 0;
-    audio.play().catch(() => {});
-    const step = 0.02;
-    const interval = duration / (1 / step);
 
+
+  const music = document.getElementById("bg-music");
+
+  function fadeInMusic() {
+    music.volume = 0;
+    music.play();
+
+    let vol = 0;
     const fade = setInterval(() => {
-      if (audio.volume < 0.4) {
-        audio.volume += step;
-      } else {
+      vol += 0.01;
+      music.volume = vol;
+
+      if (vol >= 1) {
         clearInterval(fade);
       }
-    }, interval);
+    }, 50);
   }
 
   const messages = document.querySelectorAll(".message");
