@@ -19,6 +19,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }, interval);
   }
 
+  const messages = document.querySelectorAll(".message");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+        } else {
+          entry.target.classList.remove("reveal");
+        }
+      });
+    },
+    {
+      threshold: 0.25,
+    },
+  );
+
+  messages.forEach((msg) => observer.observe(msg));
+
   /* =========================
      ✉️ ENVELOPE → LETTER
   ========================== */
@@ -41,10 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflowY = "auto";
 
         // Smooth scroll into letter
-        letter.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        letter.classList.remove("hidden");
+        document.body.style.overflowY = "auto";
+
+        // hard reset scroll first
+        window.scrollTo(0, 0);
+
+        // then scroll cleanly to the letter
+        setTimeout(() => {
+          letter.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
       }, 2000);
     });
   }

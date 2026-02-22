@@ -29,7 +29,7 @@ body {
   bottom: -20px;
   width: 14px;
   height: 14px;
-  background: rgba(120, 30, 30, 0.4);
+  background: rgb(255, 192, 203);
   border-radius: 50%;
   animation: floatUp linear infinite;
 }
@@ -107,7 +107,7 @@ body {
   bottom: 22px;
   width: 100%;
   font-family: "Italianno", cursive;
-  font-size: 2.8em;
+  font-size: 3.2em;
   color: #5c4033;
   z-index: 4;
 }
@@ -117,21 +117,22 @@ body {
 ========================= */
 .love-letter {
   max-width: 800px;
-  margin: 120px auto;
+  margin: 0 auto;
+  padding-top: 120px;
   background: #fffaf3;
   padding: 80px 60px;
   border-radius: 6px;
   box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-  animation: letterEnter 1.4s ease forwards;
+  animation: letterEnter 2s ease forwards;
   z-index: 5;
 }
 
 @keyframes letterEnter {
   from {
     opacity: 0;
-    transform: translateY(80px) scale(0.96);
+    transform: translateY(30px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -145,7 +146,7 @@ body {
 
 .message {
   margin-bottom: 60px;
-  font-size: 1.6em;
+  font-size: 1.8em;
   line-height: 1.6;
 }
 
@@ -185,7 +186,9 @@ body {
   }
 
   .envelope-text {
-    font-size: 1.7em;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -201,4 +204,18 @@ body {
     font-size: 1rem;
     line-height: 1.6;
   }
+}
+
+.message {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.message.reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
