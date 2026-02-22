@@ -186,12 +186,12 @@ body {
   }
 
  .envelope-text {
-    width: 85%;
-    bottom: 40px;
-    font-size: 2.2em;
-    line-height: 1.35;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: auto;              /* release bottom anchor */
+    top: 55%;                  /* control vertical position */
+    transform: translateY(-50%);
+    font-size: 2.1em;
+    padding: 0 16px;
+    line-height: 1.3;
   }
 }
 
