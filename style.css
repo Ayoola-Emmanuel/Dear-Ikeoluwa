@@ -189,7 +189,7 @@ body {
     bottom: auto;              /* release bottom anchor */
     top: 55%;                  /* control vertical position */
     transform: translateY(-50%);
-    font-size: 1.73em;
+    font-size: 1.74em;
     padding: 0 16px;
     line-height: 1.3;
   }
