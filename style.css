@@ -7,7 +7,7 @@
 
 body {
   margin: 0;
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: "Felipa", cursive;
   background: radial-gradient(circle at top, #fff4e8, #e8d3b8);
   color: #5c4033;
   text-align: center;
@@ -61,17 +61,9 @@ body {
   opacity: 0;
 }
 
-/* .envelope {
-  width: 500px;
-  height: 340px;
-  position: relative;
-  cursor: pointer;
-  animation: floatEnvelope 4s ease-in-out infinite;
-} */
-
 .envelope {
-  width: clamp(340px, 90vw, 500px);
-  height: calc(clamp(300px, 85vw, 440px) * 0.69);
+width: clamp(460px, 90vw, 680px);
+height: calc(clamp(405px, 85vw, 600px) * 0.69);
   position: relative;
   cursor: pointer;
   animation: floatEnvelope 4s ease-in-out infinite;
@@ -109,7 +101,7 @@ body {
   position: absolute;
   bottom: 22px;
   width: 100%;
-  font-family: "Great Vibes", cursive;
+  font-family: "Italianno", cursive;
   font-size: 2em;
   color: #5c4033;
   z-index: 4;
@@ -172,8 +164,8 @@ body {
 
 @media (max-width: 768px) {
   .envelope {
-    width: 300px;
-    height: 210px;
+   width: 360px;
+height: 248px;
   }
 
   .envelope-text {
